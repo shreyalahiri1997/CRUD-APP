@@ -35,7 +35,7 @@ var storage = multer.diskStorage({
  
 var upload = multer({ storage: storage });
 
-mongoose.connect('mongodb+srv://shreyalahirisp:sushi080693@cluster0.yykawl0.mongodb.net/NODE-API?retryWrites=true&w=majority')
+mongoose.connect('mongodb+srv://sneha:sneha@cluster0.rodg8nr.mongodb.net/?retryWrites=true&w=majority')
     .then(() => {
         console.log('Connected!')
         
