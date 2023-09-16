@@ -6,6 +6,10 @@ const fs = require("fs");
 const multer = require("multer");
 
 var productsRouter = require('./routes/products');
+var articlesRouter = require('./routes/article');
+var storiesRouter = require('./routes/story');
+var quizesRouter = require('./routes/quiz');
+var usersRouter = require('./routes/user');
 
 const imgSchema = require('./models/imageModel')
 
@@ -19,6 +23,10 @@ app.use(express.json())
 app.use(express.urlencoded({extended: false}))
 
 app.use('/products', productsRouter);
+app.use('/articles', articlesRouter);
+app.use('/stories', storiesRouter);
+app.use('/quizes', quizesRouter);
+app.use('/users', usersRouter);
 
 app.set("view engine", "ejs");
 
@@ -35,13 +43,14 @@ var storage = multer.diskStorage({
  
 var upload = multer({ storage: storage });
 
+// mongoose.connect('mongodb+srv://shreyalahirisp:sushi080693@cluster0.yykawl0.mongodb.net/NODE-API?retryWrites=true&w=majority')
 mongoose.connect('mongodb+srv://sneha:sneha@cluster0.rodg8nr.mongodb.net/?retryWrites=true&w=majority')
-    .then(() => {
+.then(() => {
         console.log('Connected!')
-        
+
         app.get('/', (req, res) => {
-            imgSchema.find({})
-            .then((data, err)=>{
+          imgSchema.find({})
+          .then((data, err)=>{
                 if(err){
                     console.log(err);
                 }
