@@ -22,6 +22,10 @@ const articleSchema = mongoose.Schema(
             required: [true],
             default: "System"
         },
+        articleImage:
+        {
+            type: String
+        }
     },
     {
         timestamps: true

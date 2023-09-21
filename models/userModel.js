@@ -57,8 +57,11 @@ const userSchema = mongoose.Schema(
             default: []
         },
         userRole: {
-            type: String,
-            required: [true, "Please enter user role"]
+            type: String
+        },
+        userImage:
+        {
+            type: String
         }
     },
     {
