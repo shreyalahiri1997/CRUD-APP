@@ -49,8 +49,8 @@ const userSchema = mongoose.Schema(
             required: [true, "Please enter date of birth"]
         },
         quizProgress: {
-            type: Array,
-            default: []
+            type: Object,
+            default: {}
         },
         storyProgress: {
             type: Array,

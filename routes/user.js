@@ -18,7 +18,8 @@ router.get('/', async(req, res) =>{
     try {    
         const filter = {};
         if (req.query.user) filter.createdBy = req.query.user
-        const user = await User.find(filter);
+        const user = await User.find(filter).sort({'quizProgress.score': -1});;
+
         res.status(200).json(user);
     } catch (error) {
         res.status(500).json({message: error.message})
