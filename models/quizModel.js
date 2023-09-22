@@ -29,10 +29,6 @@ const quizSchema = mongoose.Schema(
         quizContent: {
             type: Array,
             required: [true, "Please enter a quiz content"]
-        },
-        currentHighScore : {
-            type: Number,
-            default: 0
         }
     },
     {
